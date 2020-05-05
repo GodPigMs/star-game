@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="tw">
+  <head>
+    <meta charset="utf-8">
+    <title>Star Battle</title>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href='css/bootstrap.min.css'>
+    <link rel="stylesheet" href='css/jquery-ui.min.css'>
+    <link rel="stylesheet" href='css/style.css'>
+  </head>
+  <body onload="init()">
+    <audio id="bgMusic">
+      <source  src="img/sound/background.mp3" type="audio/mp3">
+    </audio>
+    <audio id="shootMusic">
+      <source  src="img/sound/shoot.mp3" type="audio/mp3">
+    </audio>
+    <audio id="destroyedMusic">
+      <source  src="img/sound/destroyed.mp3" type="audio/mp3">
+    </audio>
+    <div class='bg-img'>
+      <div class='start_panel' id='start_panel'>
+        <div class='center title'>Star Battle</div><br><hr>
+        <span id='help' class='hide content-text'>
+        　How to Play Star Battle.<br>
+        　1. Move the spaceship using the sensible areas in the screen;<br>
+        　2. The timer present the time lapsed;<br>
+        　3. The fuel counter show the remain fuel;<br>
+        　4. During the flight, the spaceship needs to destroy the asteroids and enemy spaceships that are presented in the space;<br>
+        　5. You can shoot pressing Space Bar;<br>
+        　6. If the spaceship hits a asteroid or another spaceship, you lose 15 points of fuel;<br>
+        　7. Enemy spaceship needs 1 shot to be destroyed, you will get 5 points for each enemy destroyed;<br>
+        　8. Asteroid needs 2 shots to be destroyed, you will get 10 points for each asteroid destroyed;<br>
+        　9. If you destroy a friendly spaceship, you lose 10 points;<br>
+        　10. During the flight, the spaceship needs to collect fuel in the space;<br>
+        　11. You can pause the game clicking in a button pause, or pressing the letter "p";<br>
+        　12. Go beyond all limits;<br>
+        　Battle in Space with Star Battle Championship...`<br>
+        </span><hr>
+        <div class='center'>　　
+          <button class='btn btn-danger btn-lg btn-ripple' onclick='help()'>How To Play</button>　　　　
+          <button class='btn btn-info btn-lg btn-ripple' onclick='start()'>Start Game!</button>
+        </div>
+      </div>
+      <div class='start_panel hide' id='send_window'>
+        <br><br>
+        請輸入名稱：<input type='text' id='name' class='form-control'><br>
+        <button class='btn btn-primary btn-lg btn-block' onclick='send()'>送出</button>
+        <br><br>
+      </div>
+      <div class='start_panel hide' id='rank_window'>
+        <table class='table'>
+          <thead class='table success table-striped'>
+            <tr>
+              <td>名次</td>
+              <td>名稱</td>
+              <td>分數</td>
+              <td>時間</td>
+            </tr>
+          </thead>
+          <tbody class='table-striped' id='table'>
+          </tbody>
+        </table>
+        <button class='btn btn-lg btn-success btn-block' onclick='renew()'>Re Game!</button>
+      </div>
+      <div id='game' class='game'>
+        <img alt='' class='me hide object-z' id='me' style="position:relative;top:100px;left:0px;" src='/img/images/spaceship-reference_5_stop.png' height='100' width='180'>
+        <span id='planet' class='planet-z'></span>
+        <span id='enemy'  class='object-z'></span>
+        <span id='friend' class='object-z'></span>
+        <span id='shoot'  class='object-z'></span>
+        <span id='energy' class='object-z'></span>
+      </div>
+      <div>
+      <div style="float: left; position:fixed; top:0%; z-index:100;" class="col-sm-12">
+        <div class="progress active"  >
+          <div id='energy_ui' class="progress-bar progress-bar-striped progress-bar-animated"  style="width: 50%"></div>
+          <span id='energy_ui_t'>15</span>
+        </div>
+        <div class='col-sm-1'><button class='btn btn-danger font btn-block btn-xs' id='stop_b' onclick='stop()'>暫停</button></div>
+        <div class='col-sm-1'><button class='btn btn-danger font btn-block btn-xs' id='music_b' onclick='stop_music()'>音效</button></div>
+        <div class='col-sm-1'><button class='btn btn-primary font  btn-block btn-xs' id='time_b'>時間：0秒</button></div>
+        <div class='col-sm-1'><button class='btn btn-primary font  btn-block btn-xs' id='score_b'>得分：0</button></div>
+      </div>
+    </div>
+    </div>
+  </body>
+</html>

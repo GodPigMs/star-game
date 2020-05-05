@@ -1,0 +1,138 @@
+
+.hide
+{
+  display: none;
+}
+
+.center
+{
+  text-align: center;
+}
+
+.title
+{
+  font-size:35px;
+}
+.content-text
+{
+  font-size:18px;
+}
+
+.bg-img
+{
+  z-index: -5;
+  background-image: url("../img/images/background-1.jpg");
+  float: left;
+  position: fixed;
+  left: -1%;
+  right: -1%;
+  top:-1%;
+  bottom: -1%;
+}
+
+.start_panel
+{
+  z-index: 10;
+  padding: 10px;
+  border: 30px 30px;
+  position: fixed;
+  top:12%;
+  left:23%;
+  right:23%;
+/*  bottom:50%;*/
+  border-radius: 20px;
+  background-color: #ffffff;
+}
+
+.object-z
+{
+  position: relative;
+  z-index: 2;
+}
+.planet-z
+{
+  position: relative;
+  z-index: 0;
+}
+.move
+{
+  position: fixed;
+}
+
+.animate
+{
+  background-repeat:no-repeat;
+  position:fixed;
+  width:80px;
+  height:81px;
+}
+
+.rotate {
+    -webkit-animation:spin 3s linear infinite;
+    -moz-animation:spin 3s linear infinite;
+    animation:spin 3s linear infinite;
+}/*rotate3d(0,1,0,360deg) ??*/
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin {
+   100% {
+      -webkit-transform: rotate(360deg);
+      transform:rotate(360deg);
+   }
+ }
+ .move_area_up
+ {
+   position: fixed;
+   left: 4%;
+   bottom: 10%;
+   z-index: 9;
+ }
+ .move_area_down
+ {
+   position: fixed;
+   left: 4%;
+   bottom: 3%;
+   z-index: 9;
+ }
+ .move_area_right
+ {
+   position: fixed;
+   left: 7%;
+   bottom: 6%;
+   z-index: 9;
+ }
+ .move_area_left
+ {
+   position: fixed;
+   left: 1%;
+   bottom: 6%;
+   z-index: 9;
+ }
+
+
+.btn-ripple {
+  background-position: center;
+  transition: background 0.8s;
+}
+.btn-ripple:hover {
+  background: #f19e0d radial-gradient(circle, transparent 1%, #f19e0d 1%) center/15000%;
+}
+.btn-ripple:active {
+  background-color: #f19e0d;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+/* Button style */
+.btn-ripple {
+  border: none;
+  border-radius: 2px;
+  padding: 12px 18px;
+  font-size: 16px;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: white;
+  /*background-color: #2196f3;*/
+  box-shadow: 0 0 4px #999;
+  outline: none;
+}
